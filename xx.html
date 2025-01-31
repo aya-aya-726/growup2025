@@ -1,24 +1,151 @@
-原沢さん用フォーマット
-
-
-<html>
-
-<title>テスト</title>　　　
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="view" content="width=device-width, initial-scale=1.0">
+ <title>ホームページのタイトル</title>　　　
+</head>
 
 <body>
+  <header>
+    <h1>ホームページのタイトル</h1>
+  </header>
 
-●<html>　　　　　　　　　　　　➡HTMLファイルの開始
-●<head>　　　　　　　　　　　　➡ヘッダ部 （タイトルなど）
-●<title>記事のタイトル</title>　　　
-●</heda>
-●<body>　　　　　　　　　　　　➡ボディ部（ホームページの本文）
-●本文
-●</body>
-●</html>　　　　　　　　　　　　➡HTMLファイルの終了
-
-
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          <th scope="col">コード</th>
+          <th scope="col">意味</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <th>ベーシックプラン</th>
+            <td data-label="コード" class="txt"><span>●<html></span></td>
+            <td data-label="意味" class="price">¥3,000</td>
+        </tr>
+        <tr>
+            <th>カスタムプラン</th>
+            <td data-label="コード" class="txt">必要なものだけ揃えられるカスタムプラン</td>
+            <td data-label="意味"class="price">¥4,000</td>
+        </tr>
+        <tr>
+            <th>プレミアムプラン</th>
+            <td data-label="コード" class="txt">全ておまかせのプレミアムプラン</td>
+            <td data-label="意味"class="price">¥10,000</td>
+        </tr>
+      </tbody>
+    </table>   
+  
+    ●<html>　　　　　　　　　　　　➡HTMLファイルの開始
+    ●<head>　　　　　　　　　　　　➡ヘッダ部 （タイトルなど）
+    ●<title>記事のタイトル</title>　　　
+    ●</heda>
+    ●<body>　　　　　　　　　　　　➡ボディ部（ホームページの本文）
+    ●本文
+    ●</body>
+    ●</html>　　　　　　　　　　　　➡HTMLファイルの終了
+  </main>
+  <footer>
+    <p>フッター部分</p>
+  </footer>
 </body>
-
-
-
 </html>
+<style>
+  body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 650px;
+    table-layout: fixed;
+    color: #000;
+  }
+  
+  table tr {
+    background-color: #fff;
+    padding: .35em;
+    border-bottom: 1px solid #bbb;
+  }
+  table thead{
+    border-bottom: 5px solid #ff9900;
+  }
+  table tr:last-child{
+     border-bottom: none
+  }
+  table th,
+  table td {
+    padding: 1em 10px 1em 1em;
+    border-right: 1px solid #bbb;
+  }
+  table th:last-child,
+  table td:last-child{
+      border: none;
+  }
+  tbody th {
+      color: #ff9901;
+  }
+  .txt{
+     text-align: left;
+     font-size: .85em;
+  }
+  .price{
+     text-align: right;
+  }
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+      width:100%;
+    }
+    table th{
+      display: block;
+      border-right: none;
+      border-bottom: 5px solid #ff9901;
+      padding-bottom: .6em;
+      margin-bottom: .6em;
+  
+    }
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      display: block;
+      margin-bottom: 2em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #bbb;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+      position: relative;
+      padding: .625em .625em .625em 4em;
+      border-right: none;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      position: absolute;
+      left: 10px;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>
